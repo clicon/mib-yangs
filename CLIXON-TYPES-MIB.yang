@@ -257,14 +257,6 @@ module CLIXON-TYPES-MIB {
         smiv2:max-access "read-only";
         smiv2:oid "1.3.6.1.4.1.8072.200.1.12";
       }
-
-      leaf ifIpAddr {
-        type inet-address:InetAddress;
-        description
-         "Example IP";
-        smiv2:max-access "read-write";
-        smiv2:oid "1.3.6.1.4.1.8072.200.1.13";
-      }
     }
 
     container clixonIETFWGTable {
@@ -368,6 +360,85 @@ module CLIXON-TYPES-MIB {
         }
       }
     }
+
+    container clixonTable {
+      description
+       "This table merely contains a set of data which is otherwise
+        useless for true network management.  It is a table which
+        describes properies about a IETF Working Group, such as the
+        names of the two working group chairs.
+        This example table is implemented in the
+        agent/mibgroup/examples/data_set.c file.";
+      smiv2:oid "1.3.6.1.4.1.8072.200.4.1";
+
+      list clixonEntry {
+        key "nsName";
+        description
+         "A row describing a given working group";
+        smiv2:oid "1.3.6.1.4.1.8072.200.4.1.1";
+
+        leaf nsName {
+          type int32 {
+            range "1..2147483647";
+          }
+          description
+           "The name of the IETF Working Group this table describes.";
+          smiv2:max-access "not-accessible";
+          smiv2:oid "1.3.6.1.4.1.8072.200.4.1.1.1";
+        }
+
+        leaf nsChair1 {
+          type binary;
+          description
+           "One of the names of the chairs for the IETF working group.";
+          smiv2:max-access "read-write";
+          smiv2:oid "1.3.6.1.4.1.8072.200.4.1.1.2";
+        }
+
+        leaf nsChair2 {
+          type binary;
+          description
+           "The other name, if one exists, of the chairs for the IETF
+            working group.";
+          smiv2:max-access "read-write";
+          smiv2:oid "1.3.6.1.4.1.8072.200.4.1.1.3";
+        }
+      }
+    }
+
+    container clixonInetTable {
+      description
+       "This table merely contains a set of data which is otherwise
+        useless for true network management.  It is a table which
+        describes properies about a IETF Working Group, such as the
+        names of the two working group chairs.
+        This example table is implemented in the
+        agent/mibgroup/examples/data_set.c file.";
+      smiv2:oid "1.3.6.1.4.1.8072.200.5.1";
+
+      list clixonInetEntry {
+        key "clixonAddress";
+        description
+         "A row describing a given working group";
+        smiv2:oid "1.3.6.1.4.1.8072.200.5.1.1";
+
+        leaf clixonAddress {
+          type inet-address:InetAddress;
+          description
+           "The name of the IETF Working Group this table describes.";
+          smiv2:max-access "not-accessible";
+          smiv2:oid "1.3.6.1.4.1.8072.200.5.1.1.1";
+        }
+
+        leaf clixonString {
+          type binary;
+          description
+           "One of the names of the chairs for the IETF working group.";
+          smiv2:max-access "read-write";
+          smiv2:oid "1.3.6.1.4.1.8072.200.5.1.1.2";
+        }
+      }
+    }
   }
 
   smiv2:alias "clixonExamples" {
@@ -392,6 +463,14 @@ module CLIXON-TYPES-MIB {
 
   smiv2:alias "clixonExampleNotificationObjects" {
     smiv2:oid "1.3.6.1.4.1.8072.200.3.2";
+  }
+
+  smiv2:alias "clixonTables" {
+    smiv2:oid "1.3.6.1.4.1.8072.200.4";
+  }
+
+  smiv2:alias "clixonInetTables" {
+    smiv2:oid "1.3.6.1.4.1.8072.200.5";
   }
 
 }
