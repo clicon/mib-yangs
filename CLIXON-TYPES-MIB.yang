@@ -272,14 +272,116 @@ module CLIXON-TYPES-MIB {
 
       leaf bitTest {
         type bits {
-          bit alarmActive {
+          bit bit00 {
             position "0";
           }
-          bit deviceRunning {
+          bit bit01 {
             position "1";
           }
-          bit failure {
+          bit bit02 {
             position "2";
+          }
+          bit bit03 {
+            position "3";
+          }
+          bit bit04 {
+            position "4";
+          }
+          bit bit05 {
+            position "5";
+          }
+          bit bit06 {
+            position "6";
+          }
+          bit bit07 {
+            position "7";
+          }
+          bit bit08 {
+            position "8";
+          }
+          bit bit09 {
+            position "9";
+          }
+          bit bit10 {
+            position "10";
+          }
+          bit bit11 {
+            position "11";
+          }
+          bit bit12 {
+            position "12";
+          }
+          bit bit13 {
+            position "13";
+          }
+          bit bit14 {
+            position "14";
+          }
+          bit bit15 {
+            position "15";
+          }
+          bit bit16 {
+            position "16";
+          }
+          bit bit17 {
+            position "17";
+          }
+          bit bit18 {
+            position "18";
+          }
+          bit bit19 {
+            position "19";
+          }
+          bit bit20 {
+            position "20";
+          }
+          bit bit21 {
+            position "21";
+          }
+          bit bit22 {
+            position "22";
+          }
+          bit bit23 {
+            position "23";
+          }
+          bit bit24 {
+            position "24";
+          }
+          bit bit25 {
+            position "25";
+          }
+          bit bit26 {
+            position "26";
+          }
+          bit bit27 {
+            position "27";
+          }
+          bit bit28 {
+            position "28";
+          }
+          bit bit29 {
+            position "29";
+          }
+          bit bit30 {
+            position "30";
+          }
+          bit bit31 {
+            position "31";
+          }
+          bit bit32 {
+            position "32";
+          }
+          bit bit33 {
+            position "33";
+          }
+          bit bit34 {
+            position "34";
+          }
+          bit bit35 {
+            position "35";
+          }
+          bit bit36 {
+            position "36";
           }
         }
         description
